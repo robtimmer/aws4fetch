@@ -30,7 +30,6 @@ const UNSIGNABLE_HEADERS = [
   'presigned-expires',
   'expect',
   'x-amzn-trace-id',
-  'range',
   'connection',
 ]
 
