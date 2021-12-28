@@ -27,10 +27,9 @@ const UNSIGNABLE_HEADERS = [
   'content-type',
   'content-length',
   'user-agent',
-  'presigned-expires',
+  'presigned-expires', // https://github.com/aws/aws-sdk-js/blob/cc29728c1c4178969ebabe3bbe6b6f3159436394/lib/signers/v4.js#L8
   'expect',
-  'x-amzn-trace-id',
-  'connection',
+  'x-amzn-trace-id'
 ]
 
 export class AwsClient {
