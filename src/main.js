@@ -351,7 +351,7 @@ async function hash(content) {
 }
 
 /**
- * @param {ArrayBuffer | ArrayLike<number> | SharedArrayBuffer} buffer
+ * @param {ArrayBuffer | ArrayLike<number>} buffer
  * @returns {string}
  */
 function buf2hex(buffer) {

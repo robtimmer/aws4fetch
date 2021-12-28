@@ -2,7 +2,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.aws4fetch = {}));
-}(this, (function (exports) { 'use strict';
+})(this, (function (exports) { 'use strict';
 
   /**
    * @license MIT <https://opensource.org/licenses/MIT>
@@ -28,9 +28,7 @@
     'user-agent',
     'presigned-expires',
     'expect',
-    'x-amzn-trace-id',
-    'range',
-    'connection',
+    'x-amzn-trace-id'
   ];
   class AwsClient {
     constructor({ accessKeyId, secretAccessKey, sessionToken, service, region, cache, retries, initRetryMs }) {
@@ -273,4 +271,4 @@
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));

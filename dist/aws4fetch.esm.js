@@ -22,9 +22,7 @@ const UNSIGNABLE_HEADERS = [
   'user-agent',
   'presigned-expires',
   'expect',
-  'x-amzn-trace-id',
-  'range',
-  'connection',
+  'x-amzn-trace-id'
 ];
 class AwsClient {
   constructor({ accessKeyId, secretAccessKey, sessionToken, service, region, cache, retries, initRetryMs }) {
