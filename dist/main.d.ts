@@ -17,7 +17,7 @@ export class AwsClient {
     cache: Map<any, any>;
     retries: number;
     initRetryMs: number;
-    sign(input: RequestInfo, init?: (RequestInit & {
+    sign(input: Request | string, init?: (RequestInit & {
         aws?: {
             accessKeyId?: string | undefined;
             secretAccessKey?: string | undefined;
@@ -32,7 +32,7 @@ export class AwsClient {
             singleEncode?: boolean | undefined;
         } | undefined;
     }) | null | undefined): Promise<Request>;
-    fetch(input: RequestInfo, init?: (RequestInit & {
+    fetch(input: Request | string, init?: (RequestInit & {
         aws?: {
             accessKeyId?: string | undefined;
             secretAccessKey?: string | undefined;
