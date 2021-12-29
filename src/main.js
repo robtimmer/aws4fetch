@@ -75,7 +75,7 @@ export class AwsClient {
    *   }
    * }} AwsRequestInit
    *
-   * @param {RequestInfo} input
+   * @param {Request | string} input
    * @param {?AwsRequestInit} [init]
    * @returns {Promise<Request>}
    */
@@ -95,7 +95,7 @@ export class AwsClient {
   }
 
   /**
-   * @param {RequestInfo} input
+   * @param {Request | string} input
    * @param {?AwsRequestInit} [init]
    * @returns {Promise<Response>}
    */
