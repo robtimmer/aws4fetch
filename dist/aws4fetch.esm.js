@@ -98,8 +98,13 @@ class AwsV4Signer {
       params.set('X-Amz-Security-Token', this.sessionToken);
     }
     this.signableHeaders = ['host', ...this.headers.keys()]
-      .filter(header => allHeaders || !UNSIGNABLE_HEADERS.includes(header))
-      .sort();
+    .filter(header => {
+      if (header === 'x-amz-content-sha256' && !allHeaders && signQuery && this.service.toLowerCase() === 's3' && this.method.toUpperCase() === 'GET' && this.headers.get(header) === 'UNSIGNED-PAYLOAD') {
+        return false
+      }
+      return allHeaders || !UNSIGNABLE_HEADERS.includes(header)
+    })
+    .sort();
     this.signedHeaders = this.signableHeaders.join(';');
     this.canonicalHeaders = this.signableHeaders
       .map(header => header + ':' + (header === 'host' ? this.url.host : (this.headers.get(header) || '').replace(/\s+/g, ' ')))
